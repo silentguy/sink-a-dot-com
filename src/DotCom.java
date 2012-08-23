@@ -2,7 +2,7 @@ import java.util.ArrayList;
 public class DotCom {
 	
 	private ArrayList<String> locationCells;
-	// private int numOfHits;
+	// private INT numOfHits;
 	// don't need that now
 	
 	public void setLocationsCells(ArrayList<String> loc) {
