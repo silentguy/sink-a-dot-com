@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class DotComBust {
 	
 	GameHelper helper = new GameHelper();
-	private ArrayList<DotCom> dotComsList;
+	private ArrayList<DotCom> dotComsList = new ArrayList<DotCom>();
 	int numOfGuesses = 0;
 
 	private void setUpGame() {
@@ -41,14 +41,13 @@ public class DotComBust {
 		String result = "miss";
 		for (DotCom DotComToCheck : dotComsList) {
 			result = DotComToCheck.checkYourself(userGuess);
-			if (result.equals("miss")){
+			if (result.equals("hit")){
 				break;
 			} else if (result.equals("kill")) {
 				dotComsList.remove(DotComToCheck);
 				break;
 			}
 		}
-		System.out.println(result);
 	}
 
 	private void finishGame() {
@@ -57,7 +56,7 @@ public class DotComBust {
 	}
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		DotComBust game = new DotComBust();
 		game.setUpGame();
 		game.startPlaying();
