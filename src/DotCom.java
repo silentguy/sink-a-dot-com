@@ -1,8 +1,13 @@
 import java.util.ArrayList;
 public class DotCom {
+	String name;
+	
+	public void setName(String n){
+		name = n;
+	}
 	
 	private ArrayList<String> locationCells;
-	// private INT numOfHits;
+	// private int numOfHits;
 	// don't need that now
 	
 	public void setLocationsCells(ArrayList<String> loc) {
