@@ -30,21 +30,37 @@ public class DotComBust {
 	
 	private void startPlaying(){
 		while (!dotComsList.isEmpty()) {
-			String prompt = 
-			helper.getUserInput(prompt)
+			String userInput = helper.getUserInput("What's your guess?");
+			checkUserGuess(userInput);
 		}
+		finishGame();
 	}
 	
-	private void checkUserGuess(){
-		
+	private void checkUserGuess(String userGuess){
+		numOfGuesses++;
+		String result = "miss";
+		for (DotCom DotComToCheck : dotComsList) {
+			result = DotComToCheck.checkYourself(userGuess);
+			if (result.equals("miss")){
+				break;
+			} else if (result.equals("kill")) {
+				dotComsList.remove(DotComToCheck);
+				break;
+			}
+		}
+		System.out.println(result);
 	}
 
 	private void finishGame() {
-		
+		System.out.println("Game Over!");
+		System.out.println("Good job! It only took you " + numOfGuesses +" to take down all DotComs.");
 	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		DotComBust game = new DotComBust();
+		game.setUpGame();
+		game.startPlaying();
 
 	}
 
