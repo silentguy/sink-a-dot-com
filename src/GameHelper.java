@@ -23,8 +23,7 @@ public class GameHelper {
 	}
 	
 	public ArrayList<String> placeDotCom(int comSize){
-		ArrayList<String> alphaCells = new ArrayList<String>(); 	
-		String [] alphacoords = new String [comSize];				// holds 'f6' type coords
+		ArrayList<String> alphaCells = new ArrayList<String>();		// holds 'f6' type coords
 		String temp = null; 										// temporary String for concat
 		int [] coords = new int[comSize]; 							// current candidate coords
 		int attempts = 0; 											// current attempts counter
@@ -37,7 +36,7 @@ public class GameHelper {
 			incr = gridLength;
 		}
 		
-		while (!success & attempts++ < 200 ) {						// main seach loop (32)
+		while (!success & attempts++ < 200 ) {						// main search loop (32)
 			location = (int) (Math.random() * gridSize);			// get random starting point
 			System.out.print(" try " + location);
 			int x = 0;												// nth position in dot com to place
